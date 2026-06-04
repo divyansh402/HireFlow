@@ -6,7 +6,7 @@ import { GetObjectCommand } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 const router = express.Router();
-
+//root
 router.get("/", authMiddleware, authorizeRole("student"), async (req, res) => {
   try {
     const student = await Student.findById(req.user.id, {
